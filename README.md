@@ -13,10 +13,12 @@ swapoff -a; sed -i '/swap/d' /etc/fstab
 ufw disable
 
 # 3. common settings for Kubernetes nodes 
+
 cat <<EOF | sudo tee /etc/modules-load.d/k8s.conf
 overlay
 br_netfilter
 EOF
+
 sudo modprobe overlay
 sudo modprobe br_netfilter
 #sysctl params required by setup, params persist across reboots
