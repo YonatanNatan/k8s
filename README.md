@@ -14,10 +14,10 @@ ufw disable
 
 # 3. common settings for Kubernetes nodes 
 
-cat <<EOF | sudo tee /etc/modules-load.d/k8s.conf
-overlay
-br_netfilter
-EOF
+1.cat <<EOF | sudo tee /etc/modules-load.d/k8s.conf
+2.overlay
+3.br_netfilter
+4.EOF
 
 sudo modprobe overlay
 sudo modprobe br_netfilter
